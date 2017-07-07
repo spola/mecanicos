@@ -35,6 +35,15 @@ class Login extends MY_Controller {
         if($this->UsuarioModel->isValid($email, $pass))
         {
             //Paraiso
+            $usuario = $this->UsuarioModel->getByEmail($email);
+            
+            $usuarioArray = array(
+                "id" => $usuario->id, 
+                "usuario" => $usuario->usuario, 
+                "nombre" => $usuario->nombre
+            );
+            
+            $this->session->set_userdata($usuarioArray);
             redirect("tareas/buscar", "refresh");
         } 
         else 
