@@ -44,7 +44,7 @@ class Login extends MY_Controller {
             );
             
             $this->session->set_userdata($usuarioArray);
-            redirect("tareas/buscar", "refresh");
+            redirect("", "refresh");
         } else {
             //A fuera
             $this->session->set_flashdata("msg", "Nombre de usuario o contraseña inválido");
