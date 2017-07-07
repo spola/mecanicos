@@ -36,7 +36,7 @@ class Login extends MY_Controller {
         {
             //Paraiso
             $usuario = $this->UsuarioModel->getByEmail($email);
-            
+
             $usuarioArray = array(
                 "id" => $usuario->id, 
                 "usuario" => $usuario->usuario, 
@@ -45,9 +45,7 @@ class Login extends MY_Controller {
             
             $this->session->set_userdata($usuarioArray);
             redirect("tareas/buscar", "refresh");
-        } 
-        else 
-        {
+        } else {
             //A fuera
             $this->session->set_flashdata("msg", "Nombre de usuario o contraseña inválido");
             redirect("login", "refresh");
