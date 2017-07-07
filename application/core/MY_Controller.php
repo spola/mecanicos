@@ -12,7 +12,8 @@ class MY_Controller extends CI_Controller {
         
         //data que se cargará en cada vista
         $data = array(
-            "isLogged" => $this->session->userdata('usuario')
+            "isLogged" => $this->session->userdata('usuario'),
+            "active" => static::class
         );
         
         //Si el controlador es seguro, entonces verificamos que lo sea

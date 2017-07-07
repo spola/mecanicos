@@ -8,9 +8,7 @@ class Servicios extends MY_Controller {
 
         $servicios = $this->ServicioModel->listar();
 
-        $this->load->view("layouts/layout_arriba.php", array(
-            "active" => "Servicios"
-        ));
+        $this->load->view("layouts/layout_arriba.php");
 		$this->load->view("servicios/servicios_listar", array(
             "servicios" => $servicios
         ));
