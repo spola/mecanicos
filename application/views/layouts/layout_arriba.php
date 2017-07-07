@@ -42,7 +42,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="collapse navbar-collapse navbar-ex6-collapse">
                 <ul class="nav navbar-nav">
                     <li class="<?php if($active == "welcome") echo 'active'?>"><a href="<?php echo site_url('welcome/index')?>">Inicio</a></li>
-                    <li class="<?php if($active == "login") echo 'active'?>"><a href="<?php echo site_url('login')?>">Login</a></li>                    
+                    <?php if(!$isLogged):?>
+                    <li class="<?php if($active == "login") echo 'active'?>"><a href="<?php echo site_url('login')?>">Login</a></li>
+                    <?php else:?>
+                    <li class="<?php if($active == "login") echo 'active'?>"><a href="<?php echo site_url('login/logout')?>">Salir</a></li>                    
+                    <?php endif?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
