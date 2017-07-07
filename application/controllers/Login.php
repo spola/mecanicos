@@ -51,4 +51,16 @@ class Login extends MY_Controller {
             redirect("login", "refresh");
         }
     }
+
+    /**
+     * Acción para terminar con la sesión del usuario
+     *
+     * @return void
+     */
+    public function logout() {
+        $this->session->unset_userdata(array(
+            "id", "nombre", "usuario"
+        ));
+        redirect("", "refresh");
+    }
 }
